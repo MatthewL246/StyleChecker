@@ -13,6 +13,9 @@ and when running with Visual Studio it provides code fixes as much as possible.
 Note that StyleChecker contains only supplemental or niche analyzers,
 so it is intended to be used together with other Roslyn analyzers.
 
+*This fork is just intended to improve the default settings a little and also merge
+some pull requests because the original repository has been inactive for a while.*
+
 ## Get started
 
 StyleChecker is available as
