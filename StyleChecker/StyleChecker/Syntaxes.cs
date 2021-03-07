@@ -29,8 +29,28 @@ namespace StyleChecker
         public static bool IsKindOneOf(
             this SyntaxTrivia trivia, params SyntaxKind[] kinds)
         {
-            return kinds.Select(k => trivia.IsKind(k))
-                .FirstOrDefault(b => b);
+            return kinds.Any(k => trivia.IsKind(k));
+        }
+
+        /// <summary>
+        /// Returns whether the <c>SyntaxKind</c> of the specified
+        /// <c>SyntaxToken</c> is included in the specified
+        /// <c>SyntaxKind</c>s or not.
+        /// </summary>
+        /// <param name="token">
+        /// The <c>SyntaxToken</c> object.
+        /// </param>
+        /// <param name="kinds">
+        /// <c>SyntaxKind</c> objects.
+        /// </param>
+        /// <returns>
+        /// <c>true</c> if the <c>SyntaxKind</c> of <paramref name="token"/>
+        /// is included in <paramref name="kinds"/>, <c>false</c> otherwise.
+        /// </returns>
+        public static bool IsKindOneOf(
+            this SyntaxToken token, params SyntaxKind[] kinds)
+        {
+            return kinds.Any(k => token.IsKind(k));
         }
 
         /// <summary>
@@ -51,8 +71,7 @@ namespace StyleChecker
         public static bool IsKindOneOf(
             this SyntaxNode node, params SyntaxKind[] kinds)
         {
-            return kinds.Select(k => node.IsKind(k))
-                .FirstOrDefault(b => b);
+            return kinds.Any(k => node.IsKind(k));
         }
 
         /// <summary>

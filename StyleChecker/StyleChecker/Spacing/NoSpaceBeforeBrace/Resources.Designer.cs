@@ -8,8 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace StyleChecker.Refactoring.IsNull {
+namespace StyleChecker.Spacing.NoSpaceBeforeBrace {
     using System;
+    using System.Reflection;
     
     
     /// <summary>
@@ -39,7 +40,7 @@ namespace StyleChecker.Refactoring.IsNull {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("StyleChecker.Refactoring.IsNull.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("StyleChecker.Spacing.NoSpaceBeforeBrace.Resources", typeof(Resources).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +62,7 @@ namespace StyleChecker.Refactoring.IsNull {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use &apos;==&apos; or &apos;!=&apos; operator when a variable is compared to null..
+        ///   Looks up a localized string similar to A brace should be preceded by a white space..
         /// </summary>
         internal static string Description {
             get {
@@ -70,43 +71,16 @@ namespace StyleChecker.Refactoring.IsNull {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Replace &apos;... is null&apos; with &apos;... == null&apos;..
+        ///   Looks up a localized string similar to Insert a white space..
         /// </summary>
-        internal static string FixTitleEqualNull {
+        internal static string FixTitle {
             get {
-                return ResourceManager.GetString("FixTitleEqualNull", resourceCulture);
+                return ResourceManager.GetString("FixTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Replace &apos;!(... is null)&apos; with &apos;... is {}&apos;..
-        /// </summary>
-        internal static string FixTitleIsBraces {
-            get {
-                return ResourceManager.GetString("FixTitleIsBraces", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Replace &apos;!(... is null)&apos; with &apos;... != null&apos;..
-        /// </summary>
-        internal static string FixTitleNotEqualNull {
-            get {
-                return ResourceManager.GetString("FixTitleNotEqualNull", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Replace &apos;... is null&apos; with &apos;!(... is {})&apos;..
-        /// </summary>
-        internal static string FixTitleNotIsBraces {
-            get {
-                return ResourceManager.GetString("FixTitleNotIsBraces", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Use &apos;{0}&apos; operator instead of &apos;is&apos; pattern matching..
+        ///   Looks up a localized string similar to A white space is needed before &apos;{0}&apos;.
         /// </summary>
         internal static string MessageFormat {
             get {
@@ -115,7 +89,7 @@ namespace StyleChecker.Refactoring.IsNull {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do not use &apos;is&apos; pattern matching with &apos;null&apos;..
+        ///   Looks up a localized string similar to A brace is not preceded by a white space..
         /// </summary>
         internal static string Title {
             get {
