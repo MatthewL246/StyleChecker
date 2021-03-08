@@ -1,4 +1,4 @@
-namespace StyleChecker
+﻿namespace StyleChecker
 {
     using Microsoft.CodeAnalysis.Diagnostics;
 
@@ -10,13 +10,14 @@ namespace StyleChecker
         /// <inheritdoc/>
         public sealed override void Initialize(AnalysisContext context)
         {
+            context.EnableConcurrentExecution();
             context.ConfigureGeneratedCodeAnalysis(
                 GeneratedCodeAnalysisFlags.None);
             Register(context);
         }
 
         /// <summary>
-        /// Resgisters actions with the specified <see
+        /// Resisters actions with the specified <see
         /// cref="AnalysisContext"/>.
         /// </summary>
         /// <param name="context">
