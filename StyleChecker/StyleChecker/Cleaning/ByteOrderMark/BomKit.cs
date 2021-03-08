@@ -1,4 +1,4 @@
-namespace StyleChecker.Cleaning.ByteOrderMark
+﻿namespace StyleChecker.Cleaning.ByteOrderMark
 {
     using System;
     using System.Collections.Immutable;
@@ -55,11 +55,11 @@ namespace StyleChecker.Cleaning.ByteOrderMark
         {
             static void ReadFully(Stream s, byte[] a, int o, int n)
             {
-                var offset = o;
-                var length = n;
+                int offset = o;
+                int length = n;
                 while (length > 0)
                 {
-                    var size = s.Read(a, offset, length);
+                    int size = s.Read(a, offset, length);
                     if (size == 0)
                     {
                         throw new EndOfStreamException();
@@ -69,10 +69,10 @@ namespace StyleChecker.Cleaning.ByteOrderMark
                 }
             }
 
-            var array = new byte[Utf8ByteOrderMark.Length];
+            byte[]? array = new byte[Utf8ByteOrderMark.Length];
             using var stream = new FileStream(path, FileMode.Open);
             ReadFully(stream, array, 0, array.Length);
-            return array.SequenceEqual(Utf8ByteOrderMark);
+            return !array.SequenceEqual(Utf8ByteOrderMark);
         }
     }
 }
