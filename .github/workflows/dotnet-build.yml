@@ -7,13 +7,15 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build-debug:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Check out code
+      uses: actions/checkout@v2
     
-    - uses: actions/setup-dotnet@v1
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
         
@@ -21,7 +23,28 @@ jobs:
       run: dotnet restore
       
     - name: Build
-      run: dotnet build
+      run: dotnet build -c "Debug"
       
     - name: Test
-      run: dotnet test --verbosity normal
+      run: dotnet test -c "Debug"
+      
+  build-release:
+    runs-on: windows-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+    
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: dotnet build -c "Release"
+      
+    - name: Test
+      run: dotnet test -c "Release"
